@@ -6,7 +6,7 @@
 #    By: paescano <paescano@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/18 19:34:43 by paescano          #+#    #+#              #
-#    Updated: 2023/11/18 20:06:07 by paescano         ###   ########.fr        #
+#    Updated: 2023/11/21 18:27:58 by paescano         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ X = "\033[0m"
 SRC_DIR = src/
 OBJ_DIR = obj/
 
-CPPFILES = 
+CPPFILES = main.cpp
 
 SRCS = ${addprefix $(SRC_DIR), $(CPPFILES)}
 OBJECTS = ${patsubst $(SRC_DIR)%.cpp, $(OBJ_DIR)%.opp, $(SRCS)}
@@ -39,7 +39,7 @@ ${NAME}: $(HEADERS) ${OBJECTS}
 	@echo $(G)Finished Compiling of [$(CPPFILES)]$(X)
 	@echo
 	@echo $(Y)Compiling [$(NAME)]...$(X)
-	${CC} ${CFLAGS} $(INCLUDES) ${OBJECTS} -o ${NAME}
+	@${CC} ${CFLAGS} $(INCLUDES) ${OBJECTS} -o ${NAME}
 	@echo $(G)Finished Compiling of [$(NAME)]$(X)
 
 $(OBJ_DIR)%.opp: $(SRC_DIR)%.cpp
