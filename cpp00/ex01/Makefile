@@ -37,6 +37,7 @@ all: ${NAME}
 
 ${NAME}: $(HEADERS) ${OBJECTS}
 	@echo $(G)Finished Compiling of [$(CPPFILES)]$(X)
+	@echo $(G)Created Objects folder$(X)
 	@echo
 	@echo $(Y)Compiling [$(NAME)]...$(X)
 	@${CC} ${CFLAGS} $(INCLUDES) ${OBJECTS} -o ${NAME}
@@ -44,8 +45,6 @@ ${NAME}: $(HEADERS) ${OBJECTS}
 
 $(OBJ_DIR)%.opp: $(SRC_DIR)%.cpp
 	@mkdir -p $(OBJ_DIR)
-	@echo $(G)Created Objects folder$(X)
-	@echo
 	@echo $(Y)Compiling [$<]...$(X)
 	@$(CC) $(CFLAGS) $(INCLUDES) -c $^ -o $@
 
