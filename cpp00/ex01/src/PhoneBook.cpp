@@ -6,7 +6,7 @@
 /*   By: paescano <paescano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:41:38 by paescano          #+#    #+#             */
-/*   Updated: 2023/11/24 13:25:07 by paescano         ###   ########.fr       */
+/*   Updated: 2023/11/24 17:02:25 by paescano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,12 @@ void PhoneBook::searchContact() {
 	std::cout << std::setw(10) << "Nickname" << std::endl;
 	for (int i = 0; i < this->_index; i++) {
 		std::cout << std::setw(10) << i << "|";
-		std::cout << std::setw(10) << this->_contacts[i].getFirstName() << "|";
-		std::cout << std::setw(10) << this->_contacts[i].getLastName() << "|";
-		std::cout << std::setw(10) << this->_contacts[i].getNickname() << std::endl;
+		_printField(this->_contacts[i].getFirstName());
+		std::cout << "|";
+		_printField(this->_contacts[i].getLastName());
+		std::cout << "|";
+		_printField(this->_contacts[i].getNickname());
+		std::cout << std::endl;
 	}
 	while (input.empty())
 	{
@@ -78,7 +81,7 @@ void PhoneBook::searchContact() {
 		return ;
 	}
 	index = _strToInt(input);
-	if (index >= 0 && index <= this->_index)
+	if (index >= 0 && index < this->_index)
 		_printContact(index);
 	else
 		std::cout << "Wrong index selected." << std::endl;
@@ -139,4 +142,11 @@ int	PhoneBook::_strToInt(std::string str)
 		num += str[i] - '0';
 	}
 	return num;
+}
+
+void PhoneBook::_printField(std::string str) {
+	if (str.length() > 10)
+		std::cout << str.substr(0, 9) << ".";
+	else
+		std::cout << std::setw(10) << str;
 }

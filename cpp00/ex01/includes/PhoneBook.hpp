@@ -6,7 +6,7 @@
 /*   By: paescano <paescano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:42:25 by paescano          #+#    #+#             */
-/*   Updated: 2023/11/24 13:05:24 by paescano         ###   ########.fr       */
+/*   Updated: 2023/11/24 16:38:18 by paescano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ class PhoneBook {
 		bool _saveContact(int index);
 		bool _isNumber(std::string str);
 		int _strToInt(std::string str);
+		void _printField(std::string str);
 };
 
 #endif
