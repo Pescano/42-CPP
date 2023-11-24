@@ -6,16 +6,18 @@
 /*   By: paescano <paescano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 18:52:38 by paescano          #+#    #+#             */
-/*   Updated: 2023/11/21 18:25:43 by paescano         ###   ########.fr       */
+/*   Updated: 2023/11/24 12:59:54 by paescano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
+#include "PhoneBook.hpp"
 
 int	main( void )
 {
 	std::string	command;
+	PhoneBook	phonebook;
 
 	while (1)
 	{
@@ -27,9 +29,9 @@ int	main( void )
 		if (std::getline(std::cin, command))
 		{
 			if (command == "ADD")
-				std::cout << "ADD" << std::endl;
+				phonebook.addContact();
 			else if (command == "SEARCH")
-				std::cout << "SEARCH" << std::endl;
+				phonebook.searchContact();
 			else if (command == "EXIT")
 				return 0;
 			else

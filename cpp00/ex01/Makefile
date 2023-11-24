@@ -6,7 +6,7 @@
 #    By: paescano <paescano@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/18 19:34:43 by paescano          #+#    #+#              #
-#    Updated: 2023/11/21 18:27:58 by paescano         ###   ########.fr        #
+#    Updated: 2023/11/24 13:09:30 by paescano         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,12 +25,12 @@ X = "\033[0m"
 SRC_DIR = src/
 OBJ_DIR = obj/
 
-CPPFILES = main.cpp
+CPPFILES = main.cpp PhoneBook.cpp Contact.cpp
 
 SRCS = ${addprefix $(SRC_DIR), $(CPPFILES)}
 OBJECTS = ${patsubst $(SRC_DIR)%.cpp, $(OBJ_DIR)%.opp, $(SRCS)}
 
-HEADERS = 
+HEADERS = includes/PhoneBook.hpp includes/Contact.hpp
 INCLUDES =	-I ./includes
 
 all: ${NAME}
@@ -47,7 +47,7 @@ $(OBJ_DIR)%.opp: $(SRC_DIR)%.cpp
 	@echo $(G)Created Objects folder$(X)
 	@echo
 	@echo $(Y)Compiling [$<]...$(X)
-	@$(CC) $(CFLAGS) $(INCLUDES) -c -o $@ $<
+	@$(CC) $(CFLAGS) $(INCLUDES) -c $^ -o $@
 
 clean:
 	@$(RM) $(OBJ_DIR)
