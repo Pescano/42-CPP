@@ -5,23 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: paescano <paescano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/27 13:26:07 by paescano          #+#    #+#             */
-/*   Updated: 2023/11/27 17:33:18 by paescano         ###   ########.fr       */
+/*   Created: 2023/11/29 16:52:09 by paescano          #+#    #+#             */
+/*   Updated: 2023/11/29 17:44:59 by paescano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-
-Zombie* zombieHorde( int N, std::string name );
+#include "Harl.hpp"
 
 int	main( void )
 {
-	Zombie*	undead;
-	int		n = 5;
+	Harl	harl;
 
-	undead = zombieHorde(n, "pepe");
-	for (int i = 0; i < n; i++)
-		undead[i].announce();	
-	delete [] undead;
+	harl.complain("DEBUG");
+	harl.complain("INFO");
+	harl.complain("WARNING");
+	harl.complain("ERROR");
 	return (0);
 }
