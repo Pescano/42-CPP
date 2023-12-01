@@ -6,11 +6,11 @@
 #    By: paescano <paescano@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/27 13:22:39 by paescano          #+#    #+#              #
-#    Updated: 2023/11/27 13:24:21 by paescano         ###   ########.fr        #
+#    Updated: 2023/11/30 11:33:14 by paescano         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = BraiiiiiiinnnzzzZ
+NAME = zombie
 
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98

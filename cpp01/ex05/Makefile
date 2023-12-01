@@ -6,11 +6,11 @@
 #    By: paescano <paescano@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 16:46:45 by paescano          #+#    #+#              #
-#    Updated: 2023/11/29 17:43:48 by paescano         ###   ########.fr        #
+#    Updated: 2023/11/30 11:35:55 by paescano         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = harl2_0
+NAME = harl
 
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98

@@ -6,11 +6,11 @@
 #    By: paescano <paescano@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/28 12:53:19 by paescano          #+#    #+#              #
-#    Updated: 2023/11/28 13:15:04 by paescano         ###   ########.fr        #
+#    Updated: 2023/11/30 11:32:29 by paescano         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Unnecesary_Violence
+NAME = violence
 
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98

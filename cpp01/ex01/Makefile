@@ -6,11 +6,11 @@
 #    By: paescano <paescano@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/27 13:22:39 by paescano          #+#    #+#              #
-#    Updated: 2023/11/27 17:03:08 by paescano         ###   ########.fr        #
+#    Updated: 2023/11/30 11:33:06 by paescano         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ZombieHorde
+NAME = horde
 
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
