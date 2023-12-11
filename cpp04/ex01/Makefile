@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: paescano <paescano@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/12/09 16:42:17 by paescano          #+#    #+#              #
-#    Updated: 2023/12/11 13:12:44 by paescano         ###   ########.fr        #
+#    Created: 2023/12/11 13:05:55 by paescano          #+#    #+#              #
+#    Updated: 2023/12/11 13:31:06 by paescano         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = polymorphism
+NAME = brain
 
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
@@ -25,12 +25,12 @@ X = "\033[0m"
 SRC_DIR = src/
 OBJ_DIR = obj/
 
-CPPFILES = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
+CPPFILES = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 
 SRCS = ${addprefix $(SRC_DIR), $(CPPFILES)}
 OBJECTS = ${patsubst $(SRC_DIR)%.cpp, $(OBJ_DIR)%.opp, $(SRCS)}
 
-HEADERS = includes/Animal.hpp includes/Dog.hpp includes/Cat.hpp includes/WrongAnimal.hpp includes/WrongCat.hpp
+HEADERS = includes/Animal.hpp includes/Dog.hpp includes/Cat.hpp includes/WrongAnimal.hpp includes/WrongCat.hpp includes/Brain.hpp
 INCLUDES =	-I ./includes
 
 all: ${NAME}
