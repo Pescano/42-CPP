@@ -6,7 +6,7 @@
 /*   By: paescano <paescano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 17:10:04 by paescano          #+#    #+#             */
-/*   Updated: 2023/12/11 17:10:01 by paescano         ###   ########.fr       */
+/*   Updated: 2023/12/11 17:40:20 by paescano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,7 @@ int	main(void) {
 	std::cout << "------------------" << std::endl;
 	delete dog1;
 	delete dog2;
+	// Test for abstract class
+	//Animal cat;
 	return (0);
 }
