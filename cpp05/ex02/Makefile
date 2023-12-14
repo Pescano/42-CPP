@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: paescano <paescano@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/12/13 16:39:23 by paescano          #+#    #+#              #
-#    Updated: 2023/12/14 13:56:16 by paescano         ###   ########.fr        #
+#    Created: 2023/12/14 13:54:08 by paescano          #+#    #+#              #
+#    Updated: 2023/12/14 15:29:17 by paescano         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = maggots
+NAME = form
 
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
@@ -25,12 +25,12 @@ X = "\033[0m"
 SRC_DIR = src/
 OBJ_DIR = obj/
 
-CPPFILES = main.cpp Bureaucrat.cpp Form.cpp
+CPPFILES = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 
 SRCS = ${addprefix $(SRC_DIR), $(CPPFILES)}
 OBJECTS = ${patsubst $(SRC_DIR)%.cpp, $(OBJ_DIR)%.opp, $(SRCS)}
 
-HEADERS = includes/Bureaucrat.hpp includes/Form.hpp
+HEADERS = includes/Bureaucrat.hpp includes/AForm.hpp includes/PresidentialPardonForm.hpp includes/RobotomyRequestForm.hpp includes/ShrubberyCreationForm.hpp
 INCLUDES =	-I ./includes
 
 all: ${NAME}

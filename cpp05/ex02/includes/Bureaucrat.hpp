@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: paescano <paescano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 12:39:22 by paescano          #+#    #+#             */
-/*   Updated: 2023/12/14 15:49:25 by paescano         ###   ########.fr       */
+/*   Created: 2023/12/14 15:30:08 by paescano          #+#    #+#             */
+/*   Updated: 2023/12/14 15:51:03 by paescano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 # include <iostream>
 # include <string>
 # include <exception>
-# include "Form.hpp"
+# include "AForm.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat {
 	private:
@@ -37,7 +37,8 @@ class Bureaucrat {
 
 		void				incrementGrade();
 		void				decrementGrade();
-		void				signForm(Form &src) const;
+		void				signForm(AForm &src) const;
+		void				executeForm(AForm const &src) const;
 
 		class GradeTooHighException : public std::exception {
 			public:

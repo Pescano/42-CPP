@@ -5,14 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: paescano <paescano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 12:39:30 by paescano          #+#    #+#             */
-/*   Updated: 2023/12/14 15:50:08 by paescano         ###   ########.fr       */
+/*   Created: 2023/12/14 15:32:25 by paescano          #+#    #+#             */
+/*   Updated: 2023/12/14 18:13:52 by paescano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : _name("default"), _grade(150) {
+Bureaucrat::Bureaucrat() : _name("default"), _grade(150)
+{
 }
 
 Bureaucrat::Bureaucrat(std::string const &name, int grade) : _name(name)
@@ -34,15 +35,17 @@ Bureaucrat::Bureaucrat(std::string const &name, int grade) : _name(name)
 	}
 	catch (std::exception &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 		this->_grade = 150;
 	}
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const &src) : _name(src.getName()), _grade(src.getGrade()){
+Bureaucrat::Bureaucrat(Bureaucrat const &src) : _name(src.getName()), _grade(src.getGrade())
+{
 }
 
-Bureaucrat::~Bureaucrat(){
+Bureaucrat::~Bureaucrat()
+{
 }
 
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &src)
@@ -79,7 +82,7 @@ void Bureaucrat::incrementGrade()
 	}
 	catch (std::exception &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 }
 
@@ -98,11 +101,11 @@ void Bureaucrat::decrementGrade()
 	}
 	catch (std::exception &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 }
 
-void Bureaucrat::signForm(Form &src) const
+void Bureaucrat::signForm(AForm &src) const
 {
 	if (src.getGradeToSign() < this->_grade)
 	{
@@ -116,6 +119,31 @@ void Bureaucrat::signForm(Form &src) const
 	{
 		src.beSigned(*this);
 		std::cout << this->_name << " signed " << src.getName() << std::endl;
+	}
+}
+
+void Bureaucrat::executeForm(AForm const &src) const
+{
+	try
+	{
+		if (!src.getSigned())
+		{
+			throw AForm::FormNotSignedException();
+		}
+		else if (src.getGradeToExecute() < this->_grade)
+		{
+			throw Bureaucrat::GradeTooLowException();
+		}
+		else
+		{
+			src.execute(*this);
+			std::cout << this->_name << " executed " << src.getName() << std::endl;
+		}
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
+		std::cerr << this->_name << " couldn't execute " << src.getName() << std::endl;
 	}
 }
 
