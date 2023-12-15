@@ -6,7 +6,7 @@
 /*   By: paescano <paescano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 15:32:34 by paescano          #+#    #+#             */
-/*   Updated: 2023/12/15 13:19:06 by paescano         ###   ########.fr       */
+/*   Updated: 2023/12/15 15:59:32 by paescano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int main()
 	    Bureaucrat  a("Jose", 1);
         Bureaucrat  b("Pepe", 72);
 
-        ShrubberyCreationForm       fS("Shrubbery");
-        RobotomyRequestForm         fR("Robotomy");
-        PresidentialPardonForm      fP("Pardon");
+        ShrubberyCreationForm       fS("Josemi");
+        RobotomyRequestForm         fR("Raul");
+        PresidentialPardonForm      fP("Pablo");
 
 		std::cout << "------------------" << std::endl;
 		std::cout << "--- Bureaucrat ---" << std::endl;

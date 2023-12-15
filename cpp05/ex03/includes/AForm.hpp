@@ -6,7 +6,7 @@
 /*   By: paescano <paescano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 15:29:51 by paescano          #+#    #+#             */
-/*   Updated: 2023/12/15 17:32:24 by paescano         ###   ########.fr       */
+/*   Updated: 2023/12/15 17:32:14 by paescano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ class AForm {
 		void				beSigned(Bureaucrat const & src);
 		void				execute(Bureaucrat const & src) const;
 		virtual void		executeAction() const = 0;
+		virtual AForm *		clone(std::string target) = 0;
 
 		class GradeTooHighException : public std::exception {
 			public:

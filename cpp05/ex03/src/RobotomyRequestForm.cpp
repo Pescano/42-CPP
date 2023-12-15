@@ -6,7 +6,7 @@
 /*   By: paescano <paescano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 15:38:21 by paescano          #+#    #+#             */
-/*   Updated: 2023/12/15 15:56:30 by paescano         ###   ########.fr       */
+/*   Updated: 2023/12/15 17:27:10 by paescano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,8 @@ void			RobotomyRequestForm::executeAction() const {
 		std::cout << this->_target << " has been robotomized successfully." << std::endl;
 	else
 		std::cout << this->_target << " robotomization failed." << std::endl;
+}
+
+AForm *			RobotomyRequestForm::clone(std::string target) {
+	return new RobotomyRequestForm(target);
 }
