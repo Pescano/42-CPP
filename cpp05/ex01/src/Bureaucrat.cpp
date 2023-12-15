@@ -6,7 +6,7 @@
 /*   By: paescano <paescano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 12:39:30 by paescano          #+#    #+#             */
-/*   Updated: 2023/12/14 15:50:08 by paescano         ###   ########.fr       */
+/*   Updated: 2023/12/15 12:53:17 by paescano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void Bureaucrat::incrementGrade()
 	}
 	catch (std::exception &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 }
 
@@ -98,7 +98,7 @@ void Bureaucrat::decrementGrade()
 	}
 	catch (std::exception &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 }
 
@@ -121,12 +121,12 @@ void Bureaucrat::signForm(Form &src) const
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return "Grade too high";
+	return "<GradeTooHighException>: Grade too high";
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return "Grade too low";
+	return "<GradeTooLowException>: Grade too low";
 }
 
 std::ostream &operator<<(std::ostream &o, Bureaucrat const &src)

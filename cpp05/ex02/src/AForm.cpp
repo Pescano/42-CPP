@@ -6,7 +6,7 @@
 /*   By: paescano <paescano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 15:31:47 by paescano          #+#    #+#             */
-/*   Updated: 2023/12/14 17:03:11 by paescano         ###   ########.fr       */
+/*   Updated: 2023/12/15 13:01:58 by paescano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ AForm::AForm(std::string name, int gradeToSign, int gradeToExecute) : _name(name
 			throw GradeTooLowException();
 	}
 	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 }
 
@@ -35,7 +35,7 @@ AForm::~AForm() {
 
 AForm &	AForm::operator=(AForm const & src) {
 	if (this != &src)
-		_signed = src._signed;
+		_signed = src.getSigned();
 	return *this;
 }
 
@@ -67,7 +67,7 @@ void		AForm::beSigned(Bureaucrat const & src) {
 			_signed = true;
 	}
 	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 }
 
@@ -81,20 +81,20 @@ void		AForm::execute(Bureaucrat const & src) const {
 			executeAction();
 	}
 	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 }
 
 const char* AForm::GradeTooHighException::what() const throw() {
-	return "Grade too high";
+	return "<GradeTooHighException>: Grade too high";
 }
 
 const char* AForm::GradeTooLowException::what() const throw() {
-	return "Grade too low";
+	return "<GradeTooLowException>: Grade too low";
 }
 
 const char* AForm::FormNotSignedException::what() const throw() {
-	return "Form not signed";
+	return "<FormNotSignedException>: Form not signed";
 }
 
 std::ostream &	operator<<(std::ostream & o, AForm const & src) {

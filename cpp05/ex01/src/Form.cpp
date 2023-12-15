@@ -6,7 +6,7 @@
 /*   By: paescano <paescano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 16:50:50 by paescano          #+#    #+#             */
-/*   Updated: 2023/12/14 12:39:54 by paescano         ###   ########.fr       */
+/*   Updated: 2023/12/15 12:08:57 by paescano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Form::Form(std::string name, int gradeToSign, int gradeToExecute) : _name(name),
 			throw GradeTooLowException();
 	}
 	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 }
 
@@ -63,16 +63,16 @@ void		Form::beSigned(Bureaucrat const & src) {
 			_signed = true;
 	}
 	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 }
 
 const char* Form::GradeTooHighException::what() const throw() {
-	return "Grade too high";
+	return "<GradeTooHighException>: Grade too high";
 }
 
 const char* Form::GradeTooLowException::what() const throw() {
-	return "Grade too low";
+	return "<GradeTooLowException>: Grade too low";
 }
 
 std::ostream &	operator<<(std::ostream & o, Form const & src) {

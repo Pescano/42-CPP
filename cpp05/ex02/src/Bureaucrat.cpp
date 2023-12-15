@@ -6,7 +6,7 @@
 /*   By: paescano <paescano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 15:32:25 by paescano          #+#    #+#             */
-/*   Updated: 2023/12/14 18:13:52 by paescano         ###   ########.fr       */
+/*   Updated: 2023/12/15 13:02:53 by paescano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,11 @@ Bureaucrat::Bureaucrat(std::string const &name, int grade) : _name(name)
 	try
 	{
 		if (grade < 1)
-		{
 			throw Bureaucrat::GradeTooHighException();
-		}
 		else if (grade > 150)
-		{
 			throw Bureaucrat::GradeTooLowException();
-		}
 		else
-		{
 			this->_grade = grade;
-		}
 	}
 	catch (std::exception &e)
 	{
@@ -72,13 +66,9 @@ void Bureaucrat::incrementGrade()
 	try
 	{
 		if (this->_grade - 1 < 1)
-		{
 			throw Bureaucrat::GradeTooHighException();
-		}
 		else
-		{
 			this->_grade--;
-		}
 	}
 	catch (std::exception &e)
 	{
@@ -91,13 +81,9 @@ void Bureaucrat::decrementGrade()
 	try
 	{
 		if (this->_grade + 1 > 150)
-		{
 			throw Bureaucrat::GradeTooLowException();
-		}
 		else
-		{
 			this->_grade++;
-		}
 	}
 	catch (std::exception &e)
 	{
@@ -108,13 +94,9 @@ void Bureaucrat::decrementGrade()
 void Bureaucrat::signForm(AForm &src) const
 {
 	if (src.getGradeToSign() < this->_grade)
-	{
 		std::cout << this->_name << " couldn't sign " << src.getName() << " because grade too low" << std::endl;
-	}
 	else if (src.getSigned())
-	{
 		std::cout << this->_name << " couldn't sign " << src.getName() << " because it's already signed" << std::endl;
-	}
 	else
 	{
 		src.beSigned(*this);
@@ -127,13 +109,9 @@ void Bureaucrat::executeForm(AForm const &src) const
 	try
 	{
 		if (!src.getSigned())
-		{
 			throw AForm::FormNotSignedException();
-		}
 		else if (src.getGradeToExecute() < this->_grade)
-		{
 			throw Bureaucrat::GradeTooLowException();
-		}
 		else
 		{
 			src.execute(*this);
@@ -149,12 +127,12 @@ void Bureaucrat::executeForm(AForm const &src) const
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return "Grade too high";
+	return "<GradeTooHighException>: Grade too high";
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return "Grade too low";
+	return "<GradeTooLowException>: Grade too low";
 }
 
 std::ostream &operator<<(std::ostream &o, Bureaucrat const &src)
