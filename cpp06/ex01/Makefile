@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: paescano <paescano@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/12/16 17:21:41 by paescano          #+#    #+#              #
-#    Updated: 2023/12/18 16:42:15 by paescano         ###   ########.fr        #
+#    Created: 2023/12/18 16:22:53 by paescano          #+#    #+#              #
+#    Updated: 2023/12/18 17:14:23 by paescano         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = convert
+NAME = serializer
 
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
@@ -25,12 +25,12 @@ X = "\033[0m"
 SRC_DIR = src/
 OBJ_DIR = obj/
 
-CPPFILES = ScalarConverter.cpp main.cpp
+CPPFILES = Serializer.cpp main.cpp
 
 SRCS = ${addprefix $(SRC_DIR), $(CPPFILES)}
 OBJECTS = ${patsubst $(SRC_DIR)%.cpp, $(OBJ_DIR)%.opp, $(SRCS)}
 
-HEADERS = includes/ScalarConverter.hpp
+HEADERS = includes/Serializer.hpp includes/Data.hpp
 INCLUDES =	-I ./includes
 
 all: ${NAME}

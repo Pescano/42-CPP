@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: paescano <paescano@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/12/16 17:21:41 by paescano          #+#    #+#              #
-#    Updated: 2023/12/18 16:42:15 by paescano         ###   ########.fr        #
+#    Created: 2023/12/18 17:36:42 by paescano          #+#    #+#              #
+#    Updated: 2023/12/18 17:41:54 by paescano         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = convert
+NAME = dinamyc_cast
 
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
@@ -25,12 +25,12 @@ X = "\033[0m"
 SRC_DIR = src/
 OBJ_DIR = obj/
 
-CPPFILES = ScalarConverter.cpp main.cpp
+CPPFILES = main.cpp
 
 SRCS = ${addprefix $(SRC_DIR), $(CPPFILES)}
 OBJECTS = ${patsubst $(SRC_DIR)%.cpp, $(OBJ_DIR)%.opp, $(SRCS)}
 
-HEADERS = includes/ScalarConverter.hpp
+HEADERS = includes/Base.hpp
 INCLUDES =	-I ./includes
 
 all: ${NAME}
