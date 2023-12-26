@@ -6,7 +6,7 @@
 /*   By: paescano <paescano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 13:06:09 by paescano          #+#    #+#             */
-/*   Updated: 2023/12/22 15:59:14 by paescano         ###   ########.fr       */
+/*   Updated: 2023/12/26 17:35:15 by paescano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,55 @@
 
 int main()
 {
-	std::vector<int> v;
-	std::list<int> l;
+	std::list<int>		l;
+	std::vector<int>	v;
 
-	v.push_back(1);
-	v.push_back(2);
-	v.push_back(3);
-	v.push_back(4);
-
-	l.push_back(1);
-	l.push_back(2);
-	l.push_back(3);
-	l.push_back(4);
-
+	for (int i = 0; i < 10; i++)
+	{
+		l.push_back(i * i);
+		v.push_back(i * i);
+	}
+	std::cout << "-------------------------------------" << std::endl;
+	std::cout << "--- Content of the list container ---" << std::endl;
+	std::cout << "-------------------------------------" << std::endl;
+	for ( std::list<int>::iterator n = l.begin(); n != l.end(); n++)
+		std::cout << *n << " ";
+	std::cout << std::endl;
+	std::cout << "---------------------------------------" << std::endl;
+	std::cout << "--- Content of the vector container ---" << std::endl;
+	std::cout << "---------------------------------------" << std::endl;
+	for (std::vector<int>::iterator n = v.begin(); n != v.end(); n++)
+		std::cout << *n << " ";
+	std::cout << std::endl;
 	try
 	{
-		std::cout << *easyfind(v, 3) << std::endl;
-		std::cout << *easyfind(l, 3) << std::endl;
-		std::cout << *easyfind(v, 5) << std::endl;
+		std::cout << "------------------------------------" << std::endl;
+		std::cout << "--- Searching for 25 in the list ---" << std::endl;
+		std::cout << "------------------------------------" << std::endl;
+		std::cout << "Found: " << *easyfind(l, 25) << std::endl;
+		std::cout << "------------------------------------" << std::endl;
+		std::cout << "--- Searching for 67 in the list ---" << std::endl;
+		std::cout << "------------------------------------" << std::endl;
+		std::cout << "Found: " << *easyfind(l, 67) << std::endl;
 	}
 	catch (std::exception &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
+	}
+	try
+	{
+		std::cout << "--------------------------------------" << std::endl;
+		std::cout << "--- Searching for 25 in the vector ---" << std::endl;
+		std::cout << "--------------------------------------" << std::endl;
+		std::cout << "Found: " << *easyfind(v, 25) << std::endl;
+		std::cout << "--------------------------------------" << std::endl;
+		std::cout << "--- Searching for 67 in the vector ---" << std::endl;
+		std::cout << "--------------------------------------" << std::endl;
+		std::cout << "Found: " << *easyfind(v, 67) << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
 	}
 	return (0);
 }
